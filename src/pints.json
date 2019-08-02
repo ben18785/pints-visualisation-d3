@@ -13,7 +13,9 @@
             "children":
             [
               {"name": "random walk Metropolis",
-               "url":  "http://www.bing.com"},
+               "url":  "http://www.bing.com",
+                "status": "done"
+              },
               {"name": "Metropolis-Hastings"}
             ]
           },

@@ -107,7 +107,12 @@ function update(source) {
   .attr("y", "-12px")
   .attr("height", "12px")
   .attr("width", "12px")
-  .style("fill", "red")
+  .style("fill", function(d){
+    if(d.status=="done")
+    return "red"
+  else
+    return "green"
+  })
   .on("click", function(d){
           window.open(d.url, '_blank')});
 
