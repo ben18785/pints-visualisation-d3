@@ -1,9 +1,11 @@
 {
  "name": "pints",
+ "label": "overall",
  "children": [
   {
    "name": "sampling",
    "note": "approximates posterior by sampling from it",
+   "label": "category",
    "children": [
     {
      "name": "Markov Chain Monte Carlo (MCMC)",

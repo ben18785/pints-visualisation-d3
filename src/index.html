@@ -156,6 +156,7 @@ function update(source) {
       .style("fill-opacity", 1e-6);
 
    nodeEnter.append("svg:a")
+      .filter(function(d){ return d.label!="overall"})
       .append("svg:rect")
       .attr("y", "-20px")
       .attr("height", "12px")
@@ -174,6 +175,7 @@ function update(source) {
       .on("mousemove", function(){return tooltip.style("top",
         (d3.event.pageY-10)+"px").style("left",(d3.event.pageX+10)+"px");})
       .on("mouseout", function(){return tooltip.style("visibility", "hidden");})
+      .filter(function(d){ return d.label!="category"})
       .on("click", function(d){
           window.open(d.url, '_blank')});
 
