@@ -3,6 +3,7 @@
  "children": [
   {
    "name": "sampling",
+   "note": "approximates posterior by sampling from it",
    "children": [
     {
      "name": "Markov Chain Monte Carlo (MCMC)",

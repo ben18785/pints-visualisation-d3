@@ -58,7 +58,6 @@ var tooltip = d3.select("body")
     .style("position", "absolute")
     .style("z-index", "10")
     .style("visibility", "hidden")
-    .text("a simple tooltip");
     
 var div = d3.select("body").append("div")	
     .attr("class", "tooltip")				
@@ -75,6 +74,35 @@ var svg = d3.select("body").append("svg")
     .attr("height", height + margin.top + margin.bottom)
     .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+var keys = ["Implemented", "Planned", "Not included"]
+var dict = {
+  "Implemented": "green",
+  "Planned": "blue",
+  "Not included": "red"
+}
+
+svg.selectAll("mydots")
+  .data(keys)
+  .enter()
+  .append("rect")
+  .attr("width", 10)
+  .attr("height", 10)
+    .attr("x", -50)
+    .attr("y", function(d,i){ return 250 + i*25}) // 100 is where the first dot appears. 25 is the distance between dots
+    .style("fill", function(d){ return dict[d]})
+
+svg.selectAll("mylabels")
+  .data(keys)
+  .enter()
+  .append("text")
+    .attr("x", -30)
+    .attr("y", function(d,i){ return 262 + i*25}) // 100 is where the first dot appears. 25 is the distance between dots
+    .style("fill", function(d){ return dict[d]})
+    .text(function(d){ return d})
+    .attr("text-anchor", "left")
+    .style("font", "18px sans-serif")
+    .style("alignment-baseline", "middle")
 
 d3.json("pints.json", function(error, data) {
   if (error) throw error;
@@ -128,23 +156,25 @@ function update(source) {
       .style("fill-opacity", 1e-6);
 
    nodeEnter.append("svg:a")
-  .append("svg:rect")
-  .attr("y", "-20px")
-  .attr("height", "12px")
-  .attr("width", "12px")
-  .style("fill", function(d){
-    if(d.status=="done")
-    return "green"
-  else if(d.status=="planned")
-    return "blue"
-  else if(d.status=="not_planned")
-    return "red"
-  })
-  .on("mouseover", function(){return tooltip.style("visibility", "visible");})
-  .on("mousemove", function(){return tooltip.style("top",
-    (d3.event.pageY-10)+"px").style("left",(d3.event.pageX+10)+"px");})
-  .on("mouseout", function(){return tooltip.style("visibility", "hidden");})
-  .on("click", function(d){
+      .append("svg:rect")
+      .attr("y", "-20px")
+      .attr("height", "12px")
+      .attr("width", "12px")
+      .style("fill", function(d){
+        if(d.status=="done")
+          return "green"
+        else if(d.status=="planned")
+          return "blue"
+        else if(d.status=="not_planned")
+          return "red"
+        })
+      .on("mouseover", function(d){
+        return tooltip .style("visibility", "visible")
+                       .text(d.note);})
+      .on("mousemove", function(){return tooltip.style("top",
+        (d3.event.pageY-10)+"px").style("left",(d3.event.pageX+10)+"px");})
+      .on("mouseout", function(){return tooltip.style("visibility", "hidden");})
+      .on("click", function(d){
           window.open(d.url, '_blank')});
 
   // Transition nodes to their new position.
