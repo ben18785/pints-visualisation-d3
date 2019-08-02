@@ -103,13 +103,13 @@ function update(source) {
       .style("fill-opacity", 1e-6);
 
    nodeEnter.append("svg:a")
-  .attr("xlink:href", function(d){return d.url;})  // <-- reading the new "url" property
   .append("svg:rect")
   .attr("y", "-12px")
   .attr("height", "12px")
   .attr("width", "12px")
   .style("fill", "red")
-  .on("click", click);
+  .on("click", function(d){
+          window.open(d.url, '_blank')});
 
   // Transition nodes to their new position.
   var nodeUpdate = node.transition()
