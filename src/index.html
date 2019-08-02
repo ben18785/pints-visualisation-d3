@@ -109,9 +109,11 @@ function update(source) {
   .attr("width", "12px")
   .style("fill", function(d){
     if(d.status=="done")
-    return "red"
-  else
     return "green"
+  else if(d.status=="planned")
+    return "blue"
+  else if(d.status=="not_planned")
+    return "red"
   })
   .on("click", function(d){
           window.open(d.url, '_blank')});
