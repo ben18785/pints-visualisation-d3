@@ -48,7 +48,7 @@ var diagonal = d3.svg.diagonal()
 var svg = d3.select("body").append("svg")
     .attr("width", width + margin.right + margin.left)
     .attr("height", height + margin.top + margin.bottom)
-  .append("g")
+    .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 d3.json("pints.json", function(error, data) {
@@ -104,7 +104,7 @@ function update(source) {
 
    nodeEnter.append("svg:a")
   .append("svg:rect")
-  .attr("y", "-12px")
+  .attr("y", "-20px")
   .attr("height", "12px")
   .attr("width", "12px")
   .style("fill", function(d){
