@@ -156,7 +156,88 @@
          },
          {
            "name": "nested sampling",
-           "label": "category"
+           "note": "generates posterior samples from regions of parameter space in proportion to their probability mass",
+           "label": "category",
+           "children": [
+             {
+               "name": "gradient-free",
+               "note": "only requires (unnormalised) posterior evaluations",
+               "label": "category",
+               "children": [
+                 {
+                   "name": "Rejection nested sampler",
+                   "note": "generates proosals by rejection sampling the prior subject to a likelihood threshold",
+                   "status": "done",
+                   "url": "https://projecteuclid.org/euclid.ba/1340370944"
+                 },
+                 {
+                   "name": "Ellipsoidal nested sampler",
+                   "note": "fits an ellipse to active particles then generates proposals by uniformly sampling ellipses",
+                   "status": "done",
+                   "url": "https://iopscience.iop.org/article/10.1086/501068"
+                 },
+                 {
+                   "name": "MultiNest",
+                   "note": "adaptively fits a number of ellipses to active particles then uniformly samples them for proposals",
+                   "status": "planned",
+                   "url": "https://arxiv.org/abs/0809.3437"
+                 },
+                 {
+                   "name": "PolyChord",
+                   "note": "uses slice sampling to generate proposals from prior",
+                   "status": "planned",
+                   "url": "https://arxiv.org/abs/1506.00171"
+                 },
+                 {
+                   "name": "Diffusive nested sampling",
+                   "note": "uses MCMC to explore constrained prior distributions",
+                   "status": "planned",
+                   "url": "https://arxiv.org/pdf/0912.2380"
+                 },
+                 {
+                   "name": "Dynamic nested sampling",
+                   "note": "number of active points varies to allocate samples more efficiently",
+                   "status": "planned",
+                   "url": "https://arxiv.org/abs/1704.03459"
+                 },
+                 {
+                   "name": "DyPolyChord",
+                   "note": "version of PolyChord where number of active points varies",
+                   "status": "planned",
+                   "url": "https://arxiv.org/abs/1704.03459"
+                 }
+               ]
+             },
+             {
+               "name": "Use gradients",
+               "note": "require derivatives of likelihood",
+               "label": "category",
+               "children": [
+                 {
+                   "name": "Galilean Monte Carlo",
+                   "note": "uses gradient of likelihood at edges of constrained prior region to guide proposals",
+                   "status": "planned",
+                   "url": "https://arxiv.org/abs/1312.5638"
+                 }
+               ]
+             }
+           ]
+         },
+         {
+           "name": "Sequential Monte Carlo",
+           "note": "uses a series of tempered distributions to propose efficient samples from posterior",
+           "status": "done",
+           "url": "https://link.springer.com/article/10.1007/s11222-007-9028-9"
+         }
+       ]
+     },
+     {
+       "name": "Approximate Bayesian Computation",
+       "note": "approximates posterior by reject sampling from the joint data-parameter distribution",
+       "label": "category",
+       "children": [
+         {
+
          }
        ]
      }
