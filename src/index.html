@@ -170,6 +170,8 @@ function update(source) {
           return "blue"
         else if(d.status=="not_planned")
           return "red"
+          else if(d.status=="not_planned")
+            return "orange"
         })
       .on("mouseover", function(d){
         return tooltip .style("visibility", "visible")
