@@ -63,7 +63,7 @@
                  },
                  {
                    "name": "multiple chain",
-                   "note": "require multiple Markov chains to work",
+                   "note": "requires multiple Markov chains",
                    "label": "category",
                    "children": [
                      {
@@ -100,8 +100,63 @@
                    ]
                  }
                ]
+             },
+             {
+               "name": "use gradients",
+               "note": "require derivatives of (unnormalised) posterior",
+               "label": "category",
+               "children": [
+                 {
+                   "name": "1st order sensitivities",
+                   "note": "requires 1st order derivative of (unnormalised) posterior",
+                   "label": "category",
+                   "children": [
+                     {
+                       "name": "Hamiltonian Monte Carlo (HMC)",
+                       "note": "follows Hamiltonian dynamics of particles on negative log posterior space to generate proposals",
+                       "status": "done",
+                       "url": "https://arxiv.org/pdf/1206.1901.pdf"
+                     },
+                     {
+                       "name": "No U-Turn Sampler (NUTS)",
+                       "note": "a dynamic version of HMC which avoids ``U-turns'' in parameter space",
+                       "status": "planned",
+                       "url": "https://arxiv.org/abs/1111.4246"
+                     },
+                     {
+                       "name": "Metropolis Adjusted Langevin Algorithm (MALA)",
+                       "note": "solves a diffusion equation of a particle so that its stationary distribution is the posterior",
+                       "status": "done",
+                       "url": "https://rss.onlinelibrary.wiley.com/doi/full/10.1111/j.1467-9868.2010.00765.x"
+                     }
+                   ]
+                 },
+                 {
+                   "name": "2nd order sensitivities",
+                   "note": "requires 2nd order derivative of (unnormalised) posterior",
+                   "label": "category",
+                   "children": [
+                     {
+                       "name": "Riemannian Manifold Hamiltonian Monte Carlo (RMHMC)",
+                       "note": "uses the curvature of posterior to determine speed of particle moving over negative log posterior space",
+                       "status": "planned",
+                       "url": "https://rss.onlinelibrary.wiley.com/doi/full/10.1111/j.1467-9868.2010.00765.x"
+                     },
+                     {
+                       "name": "Riemannian Manifold Langevin",
+                       "note": "uses curvature of posterior to determine a natural gradient that guides proposals",
+                       "status": "planned",
+                       "url": "https://rss.onlinelibrary.wiley.com/doi/full/10.1111/j.1467-9868.2010.00765.x"
+                     }
+                   ]
+                 }
+               ]
              }
            ]
+         },
+         {
+           "name": "nested sampling",
+           "label": "category"
          }
        ]
      }
