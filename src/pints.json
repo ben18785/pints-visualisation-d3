@@ -7,135 +7,155 @@
    "note": "approximates posterior by sampling from it",
    "label": "category",
    "children": [
-    {
-     "name": "Markov Chain Monte Carlo (MCMC)",
-     "children": [
-      {"name": "gradient-free",
-        "children":[
-          {"name": "non-adaptive",
-            "children":
-            [
-              {"name": "random walk Metropolis",
-               "url":  "http://www.bing.com",
-                "status": "done"
-              },
-              {"name": "Metropolis-Hastings"}
-            ]
-          },
-          {"name": "adaptive",
-            "children":
-            [
-              {"name": "Adaptive Covariance MCMC"},
-              {"name": "Delayed Acceptance Adaptive Metropolis (DRAM)"}
-            ]
-          },
-          {"name": "differential evolution",
-            "children":
-            [
-              {"name": "vanilla differential evolution"},
-              {"name": "emcee hammer"},
-              {"name": "DiffeRential Evolution Adaptive Metropolis (DREAM)"}
-            ]
-          },
-          {"name": "population MCMC"}
-        ]
-      },
-      {"name": "use gradients",
-        "children":
-        [
-          {"name": "1st order only",
-            "children":
-            [
-              {"name": "Hamiltonian Monte Carlo (HMC)"},
-              {"name": "No-U-Turn Sampler (NUTS)"},
-              {"name": "Metropolis-Adjusted Langevin Algorithm (MALA)"}
-            ]
-          },
-          {"name": "1st & 2nd order",
-            "children":
-            [
-              {"name": "Riemannian Manifold Hamiltonian Monte Carlo (RMHMC)"},
-              {"name": "Simplified Manifold Metropolis-Adjusted Langevin Algorithm (smMALA)"}
-            ]
-          }
-        ]
-      }
-     ]
-    },
-    {
-     "name": "nested sampling",
-     "children": [
-      {"name": "vanilla nested sampling"},
-      {"name": "ellipsoidal nested sampling"},
-      {"name": "MultiNest"}
-     ]
-    },
-    {
-     "name": "particle sampling",
-     "children": [
-      {"name": "sequential Monte Carlo"}
-     ]
-    },
-    {
-     "name": "Approximate Bayesian Computation (ABC)",
-     "children": [
-      {"name": "vanilla rejection ABC"},
-      {"name": "Markov Chain Monte Carlo ABC (ABC-MCMC)"},
-      {"name": "sequential Monte Carlo ABC (ABC-SMC)"}
-     ]
-    }
+     {
+       "name": "exact (asymptotically)",
+       "note": "approximates posterior exactly in infinite limit",
+       "label": "category",
+       "children": [
+         {
+           "name": "Markov chain Monte Carlo (MCMC)",
+           "note": "uses a dependent sampler (a Markov chain) to sample from posterior",
+           "label": "category",
+           "children": [
+             {
+               "name": "gradient-free",
+               "note": "only requires (unnormalised) posterior evaluations",
+               "label": "category",
+               "children": [
+                 {
+                   "name": "single chain",
+                   "note": "works with a single Markov chain",
+                   "label": "category",
+                   "children":[
+                     {
+                       "name": "adaptive",
+                       "note": "adapt sampling hyperparameters as it runs",
+                       "label": "category",
+                       "children": [
+                         {
+                           "name": "Remi",
+                           "note": "adapts covariance matrix according to previously accepted steps",
+                           "status": "done",
+                           "url": "http://dx.doi.org/10.1016/j.yjmcc.2015.11.018"
+                         },
+                         {
+                           "name": "Delayed Rejection Adaptive Metropolis",
+                           "note": "combines delayed rejection (using multiple proposal kernels) with adaptive covariance",
+                           "status": "done",
+                           "url": "https://link.springer.com/article/10.1007/s11222-006-9438-0"
+                         }
+                       ]
+                     },
+                     {
+                       "name": "non-adaptive",
+                       "note": "do not adapt sampling hyperparameters",
+                       "label": "category",
+                       "children": [
+                         {
+                           "name": "Random Walk Metropolis",
+                           "note": "oldest MCMC sampler out there",
+                           "status": "done",
+                           "url": "https://aip.scitation.org/doi/abs/10.1063/1.1699114"
+                         }
+                       ]
+                     }
+                   ]
+                 },
+                 {
+                   "name": "multiple chain",
+                   "note": "require multiple Markov chains to work",
+                   "label": "category",
+                   "children": [
+                     {
+                       "name": "differential evolution",
+                       "note": "creates proposals by combining current values of a number of Markov chains",
+                       "label": "category",
+                       "children": [
+                         {
+                           "name": "(vanilla) differential evolution",
+                           "note": "combines the current value of two randomly-chosen Markov chains to form a proposal",
+                           "status": "done",
+                           "url" : "https://link.springer.com/article/10.1007/s11222-006-8769-1"
+                         },
+                         {
+                           "name": "emcee hammer",
+                           "note": "affine-invariant ensemble sampler that combines two randomly-chosen Markov chains to form a proposal",
+                           "status": "done",
+                           "url": "https://arxiv.org/abs/1202.3665"
+                         },
+                         {
+                           "name": "DiffeRential Evolution Adaptive Metropolis (DREAM)",
+                           "note": "combines current value of many Markov chains to form a proposal",
+                           "status": "done",
+                           "url": "https://www.degruyter.com/view/j/ijnsns.2009.10.3/ijnsns.2009.10.3.273/ijnsns.2009.10.3.273.xml"
+                         }
+                       ]
+                     },
+                     {
+                       "name": "Population MCMC",
+                       "note": "ensemble of Markov chains - each at different temperatures - used to sample from posterior",
+                       "status": "done",
+                       "url": "https://link.springer.com/article/10.1007/s11222-007-9028-9"
+                     }
+                   ]
+                 }
+               ]
+             }
+           ]
+         }
+       ]
+     }
    ]
-  },
-  {
-   "name": "optimisation",
-   "children": [
-    {"name": "gradient-free",
-      "children":
-      [
-        {"name": "particle based methods",
-        "children":
-        [
-          {"name": "evolution strategies",
-            "children":
-            [
-              {"name": "Covariance Matrix Adaptation Evolution Strategy (CMAES)"},
-              {"name": "Separable Natural Evolution Strategy (SNES)"},
-              {"name": "Exponential Natural Evolution Strategy (XNES)"},
-              {"name": "differential evolution"}
-            ]
-          },
-          {"name": "Particle Swarm Optimisation (PSO)"}
-        ]
-        },
-        {"name": "Nelder-Mead"},
-        {"name": "simulated annealing"},
-        {"name": "random search"}
-      ]
-    },
-    {"name": "use gradients",
-      "children":
-      [
-        {"name": "1st order only",
-          "children":
-          [
-            {"name": "stochastic gradient descent"},
-            {"name": "AdaGrad"},
-            {"name": "Adaptive Moment Estimation (Adam)"},
-            {"name": "RMSProp"}
-          ]
-        },
-        {"name": "1st & 2nd order",
-          "children":
-          [
-            {"name": "stochastic gradient descent"},
-            {"name": "conjugate gradients"},
-            {"name": "Newton's method"}
-          ]
-        }
-      ]
-    }
-   ]
-  }
+ },
+ {
+  "name": "optimisation",
+  "children": [
+   {"name": "gradient-free",
+     "children":
+     [
+       {"name": "particle based methods",
+       "children":
+       [
+         {"name": "evolution strategies",
+           "children":
+           [
+             {"name": "Covariance Matrix Adaptation Evolution Strategy (CMAES)"},
+             {"name": "Separable Natural Evolution Strategy (SNES)"},
+             {"name": "Exponential Natural Evolution Strategy (XNES)"},
+             {"name": "differential evolution"}
+           ]
+         },
+         {"name": "Particle Swarm Optimisation (PSO)"}
+       ]
+       },
+       {"name": "Nelder-Mead"},
+       {"name": "simulated annealing"},
+       {"name": "random search"}
+     ]
+   },
+   {"name": "use gradients",
+     "children":
+     [
+       {"name": "1st order only",
+         "children":
+         [
+           {"name": "stochastic gradient descent"},
+           {"name": "AdaGrad"},
+           {"name": "Adaptive Moment Estimation (Adam)"},
+           {"name": "RMSProp"}
+         ]
+       },
+       {"name": "1st & 2nd order",
+         "children":
+         [
+           {"name": "stochastic gradient descent"},
+           {"name": "conjugate gradients"},
+           {"name": "Newton's method"}
+         ]
+       }
+     ]
+   }
   ]
+ }
+]
 }
-  
