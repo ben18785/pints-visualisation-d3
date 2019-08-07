@@ -177,10 +177,22 @@
                            "url": "https://link.springer.com/article/10.1007/s11222-006-9438-0"
                          },
                          {
+                           "name": "Generalised elliptical slice sampling",
+                           "note": "exploits parallel chains to construct scale-location Gaussian mixture approximation of posterior to use in elliptical slice sampling",
+                           "status": "planned",
+                           "url": "https://arxiv.org/abs/1210.7477"
+                         },
+                         {
                            "name": "Remi",
                            "note": "adapts covariance matrix according to previously accepted steps",
                            "status": "done",
                            "url": "http://dx.doi.org/10.1016/j.yjmcc.2015.11.018"
+                         },
+                         {
+                           "name": "Slice sampling with overrelaxation",
+                           "note": "univariate method that proposes values on the opposite side of a mode from current state",
+                           "status": "done",
+                           "url": "https://projecteuclid.org/euclid.aos/1056562461"
                          }
                        ]
                      },
@@ -194,6 +206,24 @@
                            "note": "oldest MCMC sampler out there",
                            "status": "done",
                            "url": "https://aip.scitation.org/doi/abs/10.1063/1.1699114"
+                         },
+                         {
+                           "name": "Slice sampling with doubling",
+                           "note": "univariate method that proposes by rejection sampling within slices estimated by doubling intervals",
+                           "status": "done",
+                           "url": "https://projecteuclid.org/euclid.aos/1056562461"
+                         },
+                         {
+                           "name": "Slice sampling with stepout",
+                           "note": "univariate method that proposes by rejection sampling within slices estimated by expanding intervals incrementally",
+                           "status": "done",
+                           "url": "https://projecteuclid.org/euclid.aos/1056562461"
+                         },
+                         {
+                           "name": "Slice sampling with hyperrectangles",
+                           "note": "multivariate method that proposes by rejection sampling within slices defined by hyperrectangles",
+                           "status": "planned",
+                           "url": "https://projecteuclid.org/euclid.aos/1056562461"
                          }
                        ]
                      }
@@ -228,6 +258,24 @@
                        "note": "a dynamic version of HMC which avoids ``U-turns'' in parameter space",
                        "status": "planned",
                        "url": "https://arxiv.org/abs/1111.4246"
+                     },
+                     {
+                       "name": "Slice sampling with adaptive hyperrectangles",
+                       "note": "proposes values by adaptively shrinking hyperrectangles after each rejection",
+                       "status": "planned",
+                       "url": "https://arxiv.org/abs/1003.3201"
+                     },
+                     {
+                       "name": "Slice sampling with covariance matching",
+                       "note": "matches conditional variance of proposal distribution to uniform distribution over a section of slice",
+                       "status": "planned",
+                       "url": "https://arxiv.org/abs/1003.3201"
+                     },
+                     {
+                       "name": "Slice sampling with rank shrinking",
+                       "note": " shrinks rank of proposal distribution to draw next proposal from a more convenient subspace",
+                       "status": "planned",
+                       "url": "https://arxiv.org/abs/1003.3201"
                      }
                    ]
                  },
