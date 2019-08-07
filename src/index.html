@@ -55,8 +55,13 @@ var i = 0,
 var tooltip = d3.select("body")
     .append("div")
     .attr("class", "tooltip")
-    .style("position", "absolute")
-    .style("z-index", "10")
+    .style("height", "100px")
+    .style("width", "150px")
+    .style("vertical-align", "middle")
+    .style("display", "table-cell")
+    .style("text-align", "center")
+    .style("position", "relative")
+    .style("top", "50%")
     .style("visibility", "hidden")
 
 var div = d3.select("body").append("div")
@@ -177,7 +182,7 @@ function update(source) {
         return tooltip .style("visibility", "visible")
                        .text(d.note);})
       .on("mousemove", function(){return tooltip.style("top",
-        (d3.event.pageY-10)+"px").style("left",(d3.event.pageX+10)+"px");})
+        (d3.event.pageY-20)+"px").style("left",(d3.event.pageX+20)+"px");})
       .on("mouseout", function(){return tooltip.style("visibility", "hidden");})
       .filter(function(d){ return d.label!="category"})
       .on("click", function(d){
