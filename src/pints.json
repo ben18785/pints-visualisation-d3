@@ -102,6 +102,18 @@
                "note": "uses importance sampling to generate proposals",
                "status": "planned",
                "url": ""
+             },
+             {
+               "name": "Saddle point ABC",
+               "note": "uses saddle point optimisation to overcome issues with regression and sampling ABC",
+               "status": "undecided",
+               "url": "https://papers.nips.cc/paper/8228-predictive-approximate-bayesian-computation-via-saddle-points.pdf"
+             },
+             {
+               "name": "Hamiltonian ABC",
+               "note": "approximates ABC gradient using forward simulations",
+               "status": "planned",
+               "url": "https://arxiv.org/pdf/1503.01916.pdf"
              }
            ]
          }
@@ -248,6 +260,12 @@
                    "label": "category",
                    "children": [
                      {
+                       "name": "Adaptive Hamiltonian Monte Carlo",
+                       "note": "uses expected squared jumping distance and Bayesian optimisation to adapt HMC steps",
+                       "status": "planned",
+                       "url": "http://proceedings.mlr.press/v28/wang13e.pdf"
+                     },
+                     {
                        "name": "Hamiltonian Monte Carlo (HMC)",
                        "note": "follows Hamiltonian dynamics of particles on negative log posterior space to generate proposals",
                        "status": "done",
@@ -258,6 +276,12 @@
                        "note": "solves a diffusion equation of a particle so that its stationary distribution is the posterior",
                        "status": "done",
                        "url": "https://rss.onlinelibrary.wiley.com/doi/full/10.1111/j.1467-9868.2010.00765.x"
+                     },
+                     {
+                       "name": "Monomial Gamma Hamiltonian Monte Carlo (MG HMC)",
+                       "note": "uses generalised kinetic energies and momentum distribution opposed to standard HMC (in doing so, unifies HMC and slice sampling)",
+                       "status": "planned",
+                       "url": "https://papers.nips.cc/paper/6147-towards-unifying-hamiltonian-monte-carlo-and-slice-sampling.pdf"
                      },
                      {
                        "name": "No U-Turn Sampler (NUTS)",
