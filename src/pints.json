@@ -266,6 +266,12 @@
                        "url": "http://proceedings.mlr.press/v28/wang13e.pdf"
                      },
                      {
+                       "name": "Adaptive Metropolis Adjusted Langevin Algorithm (MALA)",
+                       "note": "extends ideas from adaptive covariance Metropolis to make MALA adaptive",
+                       "status": "planned",
+                       "url": "https://link.springer.com/article/10.1007%2Fs11009-006-8550-0"
+                     },
+                     {
                        "name": "Hamiltonian Monte Carlo (HMC)",
                        "note": "follows Hamiltonian dynamics of particles on negative log posterior space to generate proposals",
                        "status": "done",
@@ -361,6 +367,12 @@
                    "url": "https://arxiv.org/abs/0809.3437"
                  },
                  {
+                   "name": "MultiNest using importance sampling",
+                   "note": "uses importance sampling to improve evidence estimates from MultiNest",
+                   "status": "planned",
+                   "url": "https://arxiv.org/pdf/1306.2144.pdf"
+                 },
+                 {
                    "name": "PolyChord",
                    "note": "uses slice sampling to generate proposals from prior",
                    "status": "planned",
@@ -391,6 +403,12 @@
                "note": "require derivatives of likelihood",
                "label": "category",
                "children": [
+                 {
+                   "name": "Constrained Hamiltonian Monte Carlo",
+                   "note": "uses HMC to sample from within constrained likelihood regions of prior",
+                   "status": "planned",
+                   "url": "https://arxiv.org/pdf/1005.0157.pdf"
+                 },
                  {
                    "name": "Galilean Monte Carlo",
                    "note": "uses gradient of likelihood at edges of constrained prior region to guide proposals",
