@@ -224,6 +224,12 @@
                            "note": "multivariate method that proposes by rejection sampling within slices defined by hyperrectangles",
                            "status": "planned",
                            "url": "https://projecteuclid.org/euclid.aos/1056562461"
+                         },
+                         {
+                           "name": "Slice sampling with Peano curves",
+                           "note": "Skilling and MacKay's idea to represent multidimensional variables to a single integer via a space-filling curve, such as a Peano",
+                           "status": "planned",
+                           "url": "https://projecteuclid.org/download/pdf_1/euclid.aos/1056562461"
                          }
                        ]
                      }
