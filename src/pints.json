@@ -183,6 +183,12 @@
                        "label": "category",
                        "children": [
                          {
+                           "name": "Adaptive parallel tempering",
+                           "note": "adapts temperature of chains as sampler runs",
+                           "status": "undecided",
+                           "url": "https://arxiv.org/pdf/1205.1076.pdf"
+                         },
+                         {
                            "name": "Delayed Rejection Adaptive Metropolis",
                            "note": "combines delayed rejection (using multiple proposal kernels) with adaptive covariance",
                            "status": "done",
@@ -195,6 +201,12 @@
                            "url": "https://arxiv.org/abs/1210.7477"
                          },
                          {
+                           "name": "Mode jumping adaptive MCMC",
+                           "note": "finds modes via (for example) optimisation then implements an MCMC routine that jumps between them",
+                           "status": "planned",
+                           "url": "https://pdfs.semanticscholar.org/c75d/f035c23e3c0425409e70d457cd43b174076f.pdf"
+                         },
+                         {
                            "name": "Remi",
                            "note": "adapts covariance matrix according to previously accepted steps",
                            "status": "done",
@@ -205,6 +217,12 @@
                            "note": "univariate method that proposes values on the opposite side of a mode from current state",
                            "status": "done",
                            "url": "https://projecteuclid.org/euclid.aos/1056562461"
+                         },
+                         {
+                           "name": "Vine copula adaptive MCMC",
+                           "note": "fits vine copula to samples and uses this to propose samples",
+                           "url": "https://projecteuclid.org/download/pdfview_1/euclid.ba/1362406647",
+                           "status": "planned"
                          }
                        ]
                      },
@@ -272,6 +290,12 @@
                        "url": "https://link.springer.com/article/10.1007%2Fs11009-006-8550-0"
                      },
                      {
+                       "name": "Bouncy particle sampler",
+                       "note": "Markov chain 'bounces' off contours to avoid rejection",
+                       "status": "planned",
+                       "url": "https://arxiv.org/pdf/1510.02451.pdf"
+                     },
+                     {
                        "name": "Hamiltonian Monte Carlo (HMC)",
                        "note": "follows Hamiltonian dynamics of particles on negative log posterior space to generate proposals",
                        "status": "done",
@@ -312,6 +336,12 @@
                        "note": " shrinks rank of proposal distribution to draw next proposal from a more convenient subspace",
                        "status": "planned",
                        "url": "https://arxiv.org/abs/1003.3201"
+                     },
+                     {
+                       "name": "Shadow Hamiltonian Monte Carlo",
+                       "note": "considers a shadow Hamiltonian (of integrator) and uses this to propose momenta resulting in higher acceptance rates. See the following for shadow Hamiltonian construction: https://epubs.siam.org/doi/abs/10.1137/S106482750138318X",
+                       "status": "planned",
+                       "url": "https://arxiv.org/pdf/1705.02891v1.pdf"
                      }
                    ]
                  },
@@ -359,6 +389,12 @@
                    "note": "fits an ellipse to active particles then generates proposals by uniformly sampling ellipses",
                    "status": "done",
                    "url": "https://iopscience.iop.org/article/10.1086/501068"
+                 },
+                 {
+                   "name": "MCMC nested sampler",
+                   "note": "uses MH accept-reject to sample from constrained prior region",
+                   "status": "planned",
+                   "url": "https://arxiv.org/pdf/0704.3704.pdf"
                  },
                  {
                    "name": "MultiNest",
