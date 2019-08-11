@@ -219,6 +219,12 @@
                            "url": "https://projecteuclid.org/euclid.aos/1056562461"
                          },
                          {
+                           "name": "Transport map accelerated Markov chain Monte Carlo",
+                           "note": "uses optimal transport theory to construct a reference space which can be more easily sampled than target space. Can we used to boost any MCMC algorithm",
+                           "status": "planned",
+                           "url": "https://arxiv.org/pdf/1412.5492.pdf"
+                         },
+                         {
                            "name": "Vine copula adaptive MCMC",
                            "note": "fits vine copula to samples and uses this to propose samples",
                            "url": "https://projecteuclid.org/download/pdfview_1/euclid.ba/1362406647",
